@@ -1,7 +1,7 @@
 /* style.css */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9eff1;
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,111 +11,106 @@ body {
 }
 
 h1 {
-    margin: 20px 0;
-    color: #333;
+    color: #5c6975;
+    margin: 40px 0 20px;
+    font-size: 2.5rem;
 }
 
 #todo-input {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    width: 100%;
+    max-width: 600px;
 }
 
 #task-input {
-    width: 300px;
-    padding: 10px;
+    flex-grow: 1;
+    padding: 15px;
     border-radius: 4px;
-    border: 1px solid #ddd;
-    margin-right: 10px;
+    border: 2px solid #5c6975;
+    font-size: 1rem;
 }
 
 #add-task-btn {
-    padding: 10px 15px;
+    padding: 15px 20px;
     border: none;
     border-radius: 4px;
-    background-color: #007bff;
+    background-color: #5c6975;
     color: white;
+    font-size: 1.5rem;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-left: 8px;
 }
 
 #add-task-btn:hover {
-    background-color: #0056b3;
+    background-color: #4a5562;
+    transform: scale(1.05);
 }
 
 #task-list {
     list-style: none;
     padding: 0;
-    width: 350px;
+    width: 100%;
+    max-width: 600px;
 }
 
 #task-list li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 8px;
+    border-radius: 4px;
     display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 10px;
+    grid-template-columns: min-content 1fr auto;
+    gap: 15px;
     align-items: center;
-}
-
-#task-list li:last-child {
-    border-bottom: none;
-}
-
-.task-completed {
-    text-decoration: line-through;
-    color: #28a745;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
 }
 
 #task-list li:hover {
-    background-color: #f7f7f7;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-#task-list li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: inside;
-    transition: background-color 0.3s;
-}
-
-.fas {
-    cursor: pointer;
-    margin-left: 8px;
-    min-width: 20px; /* Ensure icons don't shrink */
-}
-
-.fas:hover {
-    color: #007bff;
-}
-
-.bullet {
-    color: #007bff; /* Blue color for bullets */
-    margin-right: 10px;
-}
-
-.fas.fa-trash-alt {
-    color: #dc3545; /* Red color for delete icon */
-}
-
-.fas.fa-edit {
-    color: #ffc107; /* Yellow color for edit icon */
-}
-
-.fas:hover {
-    color: #007bff;
-    transform: scale(1.1);
-}
-
-.mark-complete {
-    margin-right: 1px;
+.task-completed .task-text {
+    text-decoration: line-through;
+    color: #a1acb8;
 }
 
 .task-text {
-    word-break: break-all; /* Break long words to prevent overflow */
+    word-break: break-all;
+    margin-left: 8px;
+}
+
+.mark-complete {
+    cursor: pointer;
+}
+
+.fas.fa-trash-alt {
+    color: #eb5757;
+}
+
+.fas.fa-edit {
+    color: #f2c94c;
+}
+
+.fas {
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.fas:hover {
+    transform: scale(1.2);
+}
+
+/* Additional hover effects for interactive elements */
+input[type="text"]:hover,
+input[type="text"]:focus,
+button:hover,
+button:focus,
+.mark-complete:hover,
+.mark-complete:focus {
+    border-color: #5c6975;
 }
