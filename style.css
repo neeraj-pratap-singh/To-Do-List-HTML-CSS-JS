@@ -55,6 +55,10 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 10px;
+    align-items: center;
 }
 
 #task-list li:last-child {
@@ -83,6 +87,7 @@ h1 {
 .fas {
     cursor: pointer;
     margin-left: 8px;
+    min-width: 20px; /* Ensure icons don't shrink */
 }
 
 .fas:hover {
@@ -108,5 +113,9 @@ h1 {
 }
 
 .mark-complete {
-    margin-right: 10px;
+    margin-right: 1px;
+}
+
+.task-text {
+    word-break: break-all; /* Break long words to prevent overflow */
 }
